@@ -1,0 +1,45 @@
+* {
+  font-family: helvetica;
+  color: #282828;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form,
+.books-container {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-control label {
+  font-weigth: bold;
+  margin-bottom: 0.3rem;
+}
+
+.form-control input {
+  padding: 5px;
+}
+
+.books-container div {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.bold {
+  color: #3662bc;
+}
+
+.link {
+  display: flex;
+  color: #3662bc;
+  margin-top: 1rem;
+}

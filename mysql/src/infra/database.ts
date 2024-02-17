@@ -1,16 +1,7 @@
-import 'dotenv/config'
+import { connection } from './connection'
 
-import mysql from 'mysql'
-
-export function connect() {
-  const connectDatabase = mysql.createConnection({
-    database: process.env.DATABASE_NAME,
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_SECRET,
-  })
-
-  connectDatabase.connect((error) => {
+function database() {
+  connection.connect((error) => {
     if (error) {
       console.log(error.message)
     }
@@ -18,4 +9,4 @@ export function connect() {
   })
 }
 
-connect()
+database()
