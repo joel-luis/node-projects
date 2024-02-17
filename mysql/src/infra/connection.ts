@@ -2,7 +2,7 @@ import 'dotenv/config'
 
 import mysql from 'mysql'
 
-export const connection = mysql.createConnection({
+export const connection = mysql.createPool({
   database: process.env.DATABASE_NAME,
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,

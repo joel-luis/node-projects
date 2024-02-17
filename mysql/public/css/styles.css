@@ -66,6 +66,15 @@ h1 {
   text-align: center;
 
   a {
+    display: flex;
+    justify-content: center;
     color: #3662bc;
   }
+}
+
+.actions {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+  gap: 1rem;
 }
