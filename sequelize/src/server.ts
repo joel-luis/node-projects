@@ -3,7 +3,6 @@ import { engine } from 'express-handlebars'
 
 import routes from './routes'
 import './infra/connect'
-import './models/User'
 
 const app = express()
 app.use(
