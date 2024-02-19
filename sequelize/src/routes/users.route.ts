@@ -1,5 +1,6 @@
 import { Request, Response, Router, raw } from 'express'
 import { User } from '../models/User'
+import { Address } from '../models/Address'
 
 const usersRouter = Router()
 
@@ -35,9 +36,13 @@ usersRouter.post('/create', async (req: Request, res: Response) => {
 usersRouter.get('/edit/:id', async (req: Request, res: Response) => {
   const id = req.params.id
 
-  const user = await User.findOne({ where: { id }, raw: true })
+  try {
+    const user = await User.findOne({ where: { id }, include: Address })
 
-  res.render('useredit', { user })
+    res.render('useredit', { user: user?.get({ plain: true }) })
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 usersRouter.post('/update', async (req: Request, res: Response) => {

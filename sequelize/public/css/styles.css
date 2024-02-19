@@ -115,3 +115,46 @@ h1 {
   border-color: #721c24;
   color: #721c24;
 }
+
+.address-container {
+  display: flex;
+  margin: 1em auto;
+  padding-top: 1em;
+  border-top: 1px solid #ccc;
+}
+
+.address-content {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 450px;
+  justify-content: center;
+}
+
+.address-container h2 {
+  margin-bottom: 1em;
+}
+
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  text-align: center;
+}
+
+.address-list div {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  padding-bottom: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.address-list form {
+  margin-left: 1em;
+}
