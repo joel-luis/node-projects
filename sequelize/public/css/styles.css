@@ -17,7 +17,8 @@
 }
 
 #navbar ul li {
-  margin-left: 1em;
+  display: flex;
+  gap: 1.5rem;
 }
 
 h1 {
@@ -75,4 +76,42 @@ h1 {
 
 .actions {
   display: flex;
+  justify-content: space-between;
+}
+
+.user-view {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+
+  a {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+.actions a,
+.actions input {
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 15px;
+  color: #000;
+  cursor: pointer;
+}
+
+.actions .details-btn {
+  border-color: #004085;
+  color: #004085;
+}
+
+.actions .delete-btn {
+  border-color: #721c24;
+  color: #721c24;
 }

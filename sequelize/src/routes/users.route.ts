@@ -1,5 +1,5 @@
-import { Request, Response, Router } from 'express'
-import User from '../models/User'
+import { Request, Response, Router, raw } from 'express'
+import { User } from '../models/User'
 
 const usersRouter = Router()
 
@@ -28,6 +28,44 @@ usersRouter.post('/create', async (req: Request, res: Response) => {
   }
 
   await User.create({ name, occupation, newsletter })
+
+  res.redirect('/')
+})
+
+usersRouter.get('/edit/:id', async (req: Request, res: Response) => {
+  const id = req.params.id
+
+  const user = await User.findOne({ where: { id }, raw: true })
+
+  res.render('useredit', { user })
+})
+
+usersRouter.post('/update', async (req: Request, res: Response) => {
+  const { id, name, occupation } = req.body
+  let newsletter = req.body.newsletter
+
+  if (newsletter === 'on') {
+    newsletter = true
+  } else {
+    newsletter = false
+  }
+
+  const userData = {
+    id,
+    name,
+    occupation,
+    newsletter,
+  }
+
+  await User.update(userData, { where: { id } })
+
+  res.redirect('/')
+})
+
+usersRouter.post('/delete/:id', async (req: Request, res: Response) => {
+  const id = req.params.id
+
+  await User.destroy({ where: { id } })
 
   res.redirect('/')
 })

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import db from '../infra/sequelize'
 
-const User = db.define('User', {
+export const User = db.define('User', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -13,5 +13,3 @@ const User = db.define('User', {
     type: DataTypes.BOOLEAN,
   },
 })
-
-export default User
