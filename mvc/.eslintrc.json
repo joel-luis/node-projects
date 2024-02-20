@@ -1,3 +1,6 @@
 {
-	"extends": "@joel-luis/eslint-config/node"
+	"extends": "@joel-luis/eslint-config/node",
+	"rules": {
+		"no-unneeded-ternary": "off"
+	}
 }

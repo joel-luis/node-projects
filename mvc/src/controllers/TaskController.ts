@@ -46,6 +46,18 @@ async function updateTaskPost(req: Request, res: Response) {
   res.redirect('/tasks')
 }
 
+async function toggleTaskStatus(req: Request, res: Response) {
+  const id = req.body.id
+  const { done } = req.body
+
+  const task = {
+    done: done === '0' ? true : false,
+  }
+
+  await Task.update(task, { where: { id } })
+  res.redirect('/tasks')
+}
+
 async function removeTask(req: Request, res: Response) {
   const id = req.body.id
 
@@ -61,6 +73,7 @@ export function TaskController() {
     createTaskSave,
     updateTask,
     updateTaskPost,
+    toggleTaskStatus,
     removeTask,
   }
 }
