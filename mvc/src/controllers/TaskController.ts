@@ -24,6 +24,28 @@ async function createTaskSave(req: Request, res: Response) {
   res.redirect('/tasks')
 }
 
+async function updateTask(req: Request, res: Response) {
+  const id = req.params.id
+
+  const task = await Task.findOne({ where: { id }, raw: true })
+
+  res.render('tasks/edit', { task })
+}
+
+async function updateTaskPost(req: Request, res: Response) {
+  const id = req.body.id
+
+  const { title, description } = req.body
+
+  const task = {
+    title,
+    description,
+  }
+
+  await Task.update(task, { where: { id } })
+  res.redirect('/tasks')
+}
+
 async function removeTask(req: Request, res: Response) {
   const id = req.body.id
 
@@ -37,6 +59,8 @@ export function TaskController() {
     createTask,
     showTask,
     createTaskSave,
+    updateTask,
+    updateTaskPost,
     removeTask,
   }
 }
