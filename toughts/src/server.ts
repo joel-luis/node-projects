@@ -7,6 +7,9 @@ import path from 'path'
 
 import routes from './routes'
 
+import './models/Toughts'
+import './models/User'
+
 const app = express()
 app.use(
   express.urlencoded({

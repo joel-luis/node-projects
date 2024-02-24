@@ -2,7 +2,7 @@ import sequelize from './sequelize'
 
 function connect() {
   try {
-    sequelize.authenticate()
+    sequelize.sync()
   } catch (error) {
     console.log('Não foi possível conectar', error)
   }
