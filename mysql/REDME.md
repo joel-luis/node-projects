@@ -36,7 +36,7 @@ This guide outlines the steps to set up a MySQL database in a Node.js project on
 5. Enter the MySQL root user:
 
    ```
-   sudo mysql -u root
+   mysql -u root -p
    ```
 
 6. View existing databases:
