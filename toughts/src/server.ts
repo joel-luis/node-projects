@@ -4,7 +4,6 @@ import session from 'express-session'
 import flash from 'express-flash'
 import { engine } from 'express-handlebars'
 import path from 'path'
-
 import routes from './routes'
 
 import './models/Toughts'
