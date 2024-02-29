@@ -3,6 +3,7 @@
 	"rules": {
 		"no-unneeded-ternary": "off",
 		"@typescript-eslint/no-var-requires": "off",
-		"@typescript-eslint/no-empty-function": "off"
+		"@typescript-eslint/no-empty-function": "off",
+		"no-useless-return": "off"
 	}
 }
