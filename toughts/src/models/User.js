@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize'
-import db from '../infra/sequelize'
+const { DataTypes } = require('sequelize')
+const db = require('../infra/connect')
 
-export const User = db.define('User', {
+const User = db.define('User', {
   name: {
     type: DataTypes.STRING,
   },
@@ -12,3 +12,5 @@ export const User = db.define('User', {
     type: DataTypes.STRING,
   },
 })
+
+module.exports = User
