@@ -207,6 +207,17 @@ form input[type="submit"]:hover,
   margin-bottom: 1em;
 }
 
+.home-header input {
+  border: none;
+  border-bottom: 1px solid #fff;
+  padding: 0.5em;
+  margin-right: 1em;
+}
+
+.home-header input[type="text"] {
+  width: 60%;
+}
+
 .home-header input::placeholder {
   color: #fff;
 }

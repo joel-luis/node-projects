@@ -23,9 +23,6 @@ module.exports = class ToughController {
       emptyToughts = false
     }
 
-    console.log(toughts)
-    console.log(emptyToughts)
-
     res.render('toughts/dashboard', { toughts, emptyToughts })
   }
 
@@ -50,9 +47,6 @@ module.exports = class ToughController {
   }
 
   static showToughts(req, res) {
-    console.log(req.query)
-
-    // check if user is searching
     let search = ''
 
     if (req.query.search) {
@@ -64,8 +58,6 @@ module.exports = class ToughController {
 
     if (req.query.order === 'old') {
       order = 'ASC'
-    } else {
-      order = 'DESC'
     }
 
     Tought.findAll({
