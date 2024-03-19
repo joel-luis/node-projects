@@ -1,0 +1,6 @@
+{
+	"extends": "@joel-luis/eslint-config/node",
+	"rules": {
+		"@typescript-eslint/no-var-requires": "off"
+	}
+}
