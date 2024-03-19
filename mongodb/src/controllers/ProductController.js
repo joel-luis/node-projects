@@ -18,6 +18,6 @@ module.exports = class ProductController {
 
     product.save()
 
-    res.redirect('/')
+    res.redirect('/products')
   }
 }

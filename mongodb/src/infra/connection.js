@@ -1,6 +1,7 @@
+require('dotenv').config()
 const { MongoClient } = require('mongodb')
 
-const uri = 'mongodb://localhost:27017/dbmongo'
+const uri = process.env.DATABASE_URI
 
 const client = new MongoClient(uri)
 

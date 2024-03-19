@@ -15,7 +15,7 @@ app.use(
   }),
 )
 
-app.use('/', productsRoutes)
+app.use('/products', productsRoutes)
 
 app.listen(3000, () => {
   console.log('Server Started on port 3000 🚀')
