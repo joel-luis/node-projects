@@ -11,12 +11,22 @@ module.exports = class ProductController {
   }
 
   static createProductPost(req, res) {
-    const { name, image, price, description } = req.body
+    const name = req.body.name
+    const price = req.body.price
+    const description = req.body.description
+    const image = req.body.image
 
-    const product = new Product(name, image, price, description)
+    const product = new Product(name, price, description, image)
 
     product.save()
-
     res.redirect('/products')
+  }
+
+  static async getProduct(req, res) {
+    const id = req.params.id
+
+    const product = await Product.getProductById(id)
+
+    res.render('products/product', { product })
   }
 }
