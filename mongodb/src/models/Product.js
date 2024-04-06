@@ -26,12 +26,13 @@ class Product {
   }
 
   static async getProductById(id) {
-    const product = await conn
-      .db()
-      .collection('products')
-      .findOne({ _id: ObjectId(id) })
+    const product = await conn.db().collection('products').findOne({ _id: id })
 
     return product
+  }
+
+  static async removeProductById(id) {
+    await conn.db().collection('products').deleteOne({ _id: id })
   }
 }
 
